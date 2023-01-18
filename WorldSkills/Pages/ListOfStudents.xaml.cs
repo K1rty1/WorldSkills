@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Excel = Microsoft.Office.Interop.Excel;
 
 namespace WorldSkills.Pages
 {
@@ -23,6 +24,12 @@ namespace WorldSkills.Pages
         public ListOfStudents()
         {
             InitializeComponent();
+        }
+
+        private void ReportOutput_Click(object sender, RoutedEventArgs e)
+        {
+            var aplication = new Excel.Application();
+            aplication.Visible = true;
         }
     }
 }

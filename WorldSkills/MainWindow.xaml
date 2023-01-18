@@ -7,10 +7,9 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
         <StackPanel>
-            <Image></Image>
-            <Button Content="Назад"></Button>
+            <Image Source="C:\Users\311-20(student)\source\repos\WorldSkills\WorldSkills\Images\wsr-300.png" Width="150" HorizontalAlignment="Left"></Image>
+            <Button Content="Назад" HorizontalAlignment="Right"></Button>
         </StackPanel>
     </Grid>
 </Window>

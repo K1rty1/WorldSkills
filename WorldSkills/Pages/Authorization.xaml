@@ -9,6 +9,9 @@
       Title="Authorization">
 
     <Grid>
-        
+        <StackPanel>
+            <TextBox Text="Введите логин"></TextBox>
+            <TextBox></TextBox>
+        </StackPanel>
     </Grid>
 </Page>
