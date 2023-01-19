@@ -93,7 +93,7 @@ namespace WorldSkills
 
             Word.Paragraph studentsParagraph = document.Paragraphs.Add();
             Word.Range studentRange = tableParagraf.Range;
-            Word.Table studentTable = document.Tables.Add(studentRange, 3, 3);
+            Word.Table studentTable = document.Tables.Add(studentRange,13, 3);
             Word.Range cellStudent;
             cellStudent = studentTable.Cell(1, 1).Range;
             cellStudent.Text = "№ п/п";
@@ -106,6 +106,11 @@ namespace WorldSkills
             studentTable.Rows[1].Range.Font.Color = Word.WdColor.wdColorAqua;
             studentTable.Rows[1].Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
             studentTable.Borders.InsideLineStyle = studentTable.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
+            for (int i = 1; i < 13; i++)
+            {
+                cellStudent = studentTable.Cell(i+1, 1).Range;
+                cellStudent.Text =Convert.ToString(i);
+            }
 
 
             //Сохранение
