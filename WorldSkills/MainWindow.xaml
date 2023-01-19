@@ -7,9 +7,15 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
         <StackPanel>
-            <Image Source="C:\Users\311-20(student)\source\repos\WorldSkills\WorldSkills\Images\wsr-300.png" Width="150" HorizontalAlignment="Left"></Image>
+            <Image Source="Images\wsr-300.png" Width="150" HorizontalAlignment="Left"></Image>
             <Button Content="Назад" HorizontalAlignment="Right"></Button>
+            <Button Content="Вывод отчета" x:Name="ReportOutputWorld" Click="ReportOutputWorld_Click"></Button>
         </StackPanel>
+        <Frame></Frame>
     </Grid>
 </Window>

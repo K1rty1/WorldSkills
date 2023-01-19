@@ -12,7 +12,8 @@
         <StackPanel>
             <TextBox Text="Выберите группу"></TextBox>
             <ComboBox></ComboBox>
-            <Button Content="Вывод отчета" x:Name="ReportOutput" Click="ReportOutput_Click"></Button>
+            <Button Content="Вывод отчета" x:Name="ReportOutputExcel" Click="ReportOutputExcel_Click"></Button>
+            <Button Content="Вывод отчета" x:Name="ReportOutputWorld" Click="ReportOutputWorld_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>

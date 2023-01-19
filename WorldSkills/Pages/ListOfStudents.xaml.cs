@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Excel = Microsoft.Office.Interop.Excel;
+using Word = Microsoft.Office.Interop.Word;
 
 namespace WorldSkills.Pages
 {
@@ -26,10 +27,17 @@ namespace WorldSkills.Pages
             InitializeComponent();
         }
 
-        private void ReportOutput_Click(object sender, RoutedEventArgs e)
+        private void ReportOutputExcel_Click(object sender, RoutedEventArgs e)
         {
             var aplication = new Excel.Application();
             aplication.Visible = true;
+        }
+
+        private void ReportOutputWorld_Click(object sender, RoutedEventArgs e)
+        {
+            Word.Application application = new Word.Application();
+            Word.Document document = application.Documents.Add();
+            application.Visible = true;
         }
     }
 }
