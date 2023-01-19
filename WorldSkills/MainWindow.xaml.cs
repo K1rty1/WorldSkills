@@ -15,6 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
+using WorldSkills.Model.Core;
 
 namespace WorldSkills
 {
@@ -23,6 +24,7 @@ namespace WorldSkills
     /// </summary>
     public partial class MainWindow : Window
     {
+        Core db = new Core();
         public MainWindow()
         {
             InitializeComponent();
@@ -110,6 +112,8 @@ namespace WorldSkills
             {
                 cellStudent = studentTable.Cell(i+1, 1).Range;
                 cellStudent.Text =Convert.ToString(i);
+                cellStudent = studentTable.Cell(i + 1, 2).Range;
+                cellStudent.Text =$"{item.LastName} {item.FiestName} {item.PatronomicName}" ;
             }
 
 
