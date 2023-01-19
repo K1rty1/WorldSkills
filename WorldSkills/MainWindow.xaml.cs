@@ -93,15 +93,19 @@ namespace WorldSkills
 
             Word.Paragraph studentsParagraph = document.Paragraphs.Add();
             Word.Range studentRange = tableParagraf.Range;
-            Word.Table studentTable = document.Tables.Add(studentRange, arrayStudent.Count() + 1, 3);
+            Word.Table studentTable = document.Tables.Add(studentRange, 3, 3);
             Word.Range cellStudent;
-            cellStudent = titleTable.Cell(1, 1).Range;
+            cellStudent = studentTable.Cell(1, 1).Range;
             cellStudent.Text = "№ п/п";
-            cellStudent = titleTable.Cell(1, 2).Range;
+            cellStudent = studentTable.Cell(1, 2).Range;
             cellStudent.Text = "Фамилия, имя, отчество слушателя";
-            cellStudent = titleTable.Cell(1, 3).Range;
+            cellStudent = studentTable.Cell(1, 3).Range;
             cellStudent.Text = "Результат аттестации";
             studentTable.Rows[1].Range.Bold = 1;
+            studentTable.Rows[1].Range.Font.Size = 16;
+            studentTable.Rows[1].Range.Font.Color = Word.WdColor.wdColorAqua;
+            studentTable.Rows[1].Range.ParagraphFormat.Alignment = Word.WdParagraphAlignment.wdAlignParagraphCenter;
+            studentTable.Borders.InsideLineStyle = studentTable.Borders.OutsideLineStyle = Word.WdLineStyle.wdLineStyleSingle;
 
 
             //Сохранение
