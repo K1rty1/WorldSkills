@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace WorldSkills.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для Authorization.xaml
+    /// Логика взаимодействия для RegistrationPage.xaml
     /// </summary>
-    public partial class Authorization : Page
+    public partial class RegistrationPage : Page
     {
-        public Authorization()
+        public RegistrationPage()
         {
             InitializeComponent();
         }
