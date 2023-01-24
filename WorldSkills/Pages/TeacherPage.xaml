@@ -9,6 +9,12 @@
       Title="TeacherPage">
 
     <Grid>
-        
+        <StackPanel>
+            <Button Content="Добавить студента" x:Name="AddStudentButton" Click="AddStudentButton_Click"></Button>
+            <Button Content="Добавить оцкенку" x:Name="AddMarkButton" Click="AddMarkButton_Click"></Button>
+            <Button Content="Список студентов" x:Name="ListOfStudentButton" Click="ListOfStudentButton_Click"></Button>
+            <Button Content= "Редактировать оценку"></Button>
+            <Button Content="Удалить студента"></Button>
+        </StackPanel>
     </Grid>
 </Page>

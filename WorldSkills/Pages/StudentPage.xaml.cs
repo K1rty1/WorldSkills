@@ -16,18 +16,13 @@ using System.Windows.Shapes;
 namespace WorldSkills.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AddingAStudentPage.xaml
+    /// Логика взаимодействия для StudentPage.xaml
     /// </summary>
-    public partial class AddingAStudentPage : Page
+    public partial class StudentPage : Page
     {
-        public AddingAStudentPage()
+        public StudentPage()
         {
             InitializeComponent();
-        }
-
-        private void CreateStudent_Click(object sender, RoutedEventArgs e)
-        {
-
         }
     }
 }

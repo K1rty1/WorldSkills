@@ -14,8 +14,9 @@
             <TextBox></TextBox>
             <TextBox Text="Введите пароль"></TextBox>
             <TextBox></TextBox>
-            <TextBox Text="Повторите пароль "></TextBox>
+            <TextBox Text="Повторите пароль"></TextBox>
             <TextBox></TextBox>
+            <Button Content="Создать" x:Name="CreateButton" Click="CreateButton_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>

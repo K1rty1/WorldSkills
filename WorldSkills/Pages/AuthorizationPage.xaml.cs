@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WorldSkills.Model;
 using WorldSkills.Model.Core;
 
 namespace WorldSkills.Pages
@@ -21,6 +22,7 @@ namespace WorldSkills.Pages
     /// </summary>
     public partial class AuthorizationPage : Page
     {
+        Core db = new Core(); //Имя подключения
         public AuthorizationPage()
         {
             InitializeComponent();
@@ -33,8 +35,8 @@ namespace WorldSkills.Pages
             {
 
                 //считаем количество записей в таблице с заданными параметрами (логин, пароль)
-                Users имяПеременной = полключениеБД.context.имяТаблицы.Where(
-                x => x.Login == имяПоля.Text && x.Password == имяПоля.Password
+                Users имяПеременной = db.context.Users.Where(
+                x => x.Login == TextBoxLogin.Text && x.Password == TextBoxPassword.Text
                 ).FirstOrDefault();
 
                 if (имяПеременной == null)
@@ -53,11 +55,11 @@ namespace WorldSkills.Pages
                     {
 
                         case 1:
-                            this.NavigationService.Navigate(new страница1());
+                            this.NavigationService.Navigate(new StudentPage());
 
                             break;
                         case 2:
-                            this.NavigationService.Navigate(new страница2());
+                            this.NavigationService.Navigate(new TeacherPage());
 
                             break;
 
@@ -75,6 +77,11 @@ namespace WorldSkills.Pages
             }
 
 
+        }
+
+        private void RegistrationButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new RegistrationPage());
         }
     }
 }

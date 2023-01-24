@@ -9,7 +9,7 @@ namespace WorldSkills.Model.Core
 {
     public class Core
     {
-        
-       
+
+        public TeacherBookEntities context = new TeacherBookEntities();
     }
 }

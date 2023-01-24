@@ -24,5 +24,20 @@ namespace WorldSkills.Pages
         {
             InitializeComponent();
         }
+
+        private void ListOfStudentButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new ListOfStudentsPage());
+        }
+
+        private void AddStudentButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AddingAStudentPage());
+        }
+
+        private void AddMarkButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.NavigationService.Navigate(new AddMarkPage());
+        }
     }
 }

@@ -10,12 +10,12 @@
 
     <Grid>
         <StackPanel >
-            <TextBox Text="Введите логин"></TextBox>
-            <TextBox></TextBox>
-            <TextBox Text="Введите пароль"></TextBox>
-            <TextBox></TextBox>
+            <Label Background="White">Введите логин</Label>
+            <TextBox x:Name="TextBoxLogin"></TextBox>
+            <Label Background="White">Введите пароль</Label>
+            <TextBox x:Name="TextBoxPassword"></TextBox>
             <Button Content="Войти" x:Name="EntranceButton" Click="EntranceButton_Click"></Button>
-            <Button Content="Регистрация"></Button>
+            <Button Content="Регистрация" x:Name="RegistrationButton" Click="RegistrationButton_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>

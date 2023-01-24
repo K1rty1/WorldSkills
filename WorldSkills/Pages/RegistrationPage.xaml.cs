@@ -20,9 +20,15 @@ namespace WorldSkills.Pages
     /// </summary>
     public partial class RegistrationPage : Page
     {
+
         public RegistrationPage()
         {
             InitializeComponent();
+        }
+
+        private void CreateButton_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }

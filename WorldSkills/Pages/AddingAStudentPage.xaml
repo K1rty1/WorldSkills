@@ -9,6 +9,18 @@
       Title="AddingAStudentPage">
 
     <Grid>
-        
+        <StackPanel>
+            <TextBox Text="Введите ФИО"   ></TextBox>
+            <TextBox></TextBox>
+            <TextBox Text="Специальность"></TextBox>
+            <ComboBox></ComboBox>
+            <TextBox Text="Год поступления"></TextBox>
+            <ComboBox></ComboBox>
+            <TextBox Text="Форма обучения"></TextBox>
+            <ComboBox></ComboBox>
+            <TextBox Text="Название группы"></TextBox>
+            <ComboBox></ComboBox>
+            <Button Content="Создать" x:Name="CreateStudent" Click="CreateStudent_Click"></Button>
+        </StackPanel>
     </Grid>
 </Page>

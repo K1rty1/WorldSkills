@@ -16,16 +16,16 @@ using System.Windows.Shapes;
 namespace WorldSkills.Pages
 {
     /// <summary>
-    /// Логика взаимодействия для AddingAStudentPage.xaml
+    /// Логика взаимодействия для AddMarkPage.xaml
     /// </summary>
-    public partial class AddingAStudentPage : Page
+    public partial class AddMarkPage : Page
     {
-        public AddingAStudentPage()
+        public AddMarkPage()
         {
             InitializeComponent();
         }
 
-        private void CreateStudent_Click(object sender, RoutedEventArgs e)
+        private void ToPutMark_Click(object sender, RoutedEventArgs e)
         {
 
         }
