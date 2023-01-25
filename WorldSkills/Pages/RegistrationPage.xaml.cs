@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WorldSkills.Model;
+using WorldSkills.Model.Core;
 
 namespace WorldSkills.Pages
 {
@@ -20,6 +22,7 @@ namespace WorldSkills.Pages
     /// </summary>
     public partial class RegistrationPage : Page
     {
+        Core db = new Core();
 
         public RegistrationPage()
         {
@@ -28,7 +31,31 @@ namespace WorldSkills.Pages
 
         private void CreateButton_Click(object sender, RoutedEventArgs e)
         {
+            try
 
+            {
+                Users ObjectName = new Users()
+                {
+                    Login = LoginBox.Text,
+                    Password = PasswordBox.Text,
+                    IdRole=1
+                   
+};
+
+                db.context.Users.Add(ObjectName);
+                db.context.SaveChanges();
+
+                MessageBox.Show("Добавление выполнено успешно !",
+                "Уведомление",
+                MessageBoxButton.OK,
+                MessageBoxImage.Information);
+
+
+            }
+            catch
+            {
+                MessageBox.Show("Критический сбор в работе приложения:", "Уведомление", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
         }
     }
 }

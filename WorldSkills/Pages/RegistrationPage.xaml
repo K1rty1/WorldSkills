@@ -10,11 +10,11 @@
 
     <Grid>
         <StackPanel>
-            <TextBox Text="Введите логин"></TextBox>
+            <TextBox Text="Введите логин" x:Name="LoginBox"></TextBox>
             <TextBox></TextBox>
-            <TextBox Text="Введите пароль"></TextBox>
+            <TextBox Text="Введите пароль" x:Name="PasswordBox"></TextBox>
             <TextBox></TextBox>
-            <TextBox Text="Повторите пароль"></TextBox>
+            <TextBox Text="Повторите пароль" x:Name="AgainPasswordBox"></TextBox>
             <TextBox></TextBox>
             <Button Content="Создать" x:Name="CreateButton" Click="CreateButton_Click"></Button>
         </StackPanel>

@@ -10,7 +10,7 @@
 
     <Grid>
         <StackPanel>
-            <TextBox Text="Выберите группу"></TextBox>
+            <Label Background="White">Выберите группу</Label>
             <ComboBox></ComboBox>
             <Button Content="Вывод отчета Word" x:Name="ReportOutputWorld" Click="ReportOutputWorld_Click"></Button>
             <Button Content="Вывод отчета Excel" x:Name="ReportOutputExcel"  Click="ReportOutputExcel_Click"></Button>
