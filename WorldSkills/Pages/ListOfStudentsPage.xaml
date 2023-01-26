@@ -9,11 +9,21 @@
       Title="ListOfStudentsPage">
 
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
         <StackPanel>
             <Label Background="White">Выберите группу</Label>
             <ComboBox></ComboBox>
             <Button Content="Вывод отчета Word" x:Name="ReportOutputWorld" Click="ReportOutputWorld_Click"></Button>
             <Button Content="Вывод отчета Excel" x:Name="ReportOutputExcel"  Click="ReportOutputExcel_Click"></Button>
+        </StackPanel>
+        <StackPanel Grid.Row="1">
+            <TextBox x:Name="FIOTextBox" Text="ФИО"></TextBox>
+            <TextBox x:Name="SPECTextBox" Text="Специальность">
+            </TextBox>
+            <Button Content="Кнопка" x:Name="ReportButton" Click="ReportButton_Click"></Button>
         </StackPanel>
     </Grid>
 </Page>

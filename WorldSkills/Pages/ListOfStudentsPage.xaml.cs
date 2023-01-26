@@ -23,6 +23,7 @@ namespace WorldSkills.Pages
     /// </summary>
     public partial class ListOfStudentsPage : Page
     {
+        Word.Application Application;
         public ListOfStudentsPage()
         {
             InitializeComponent();
@@ -134,5 +135,24 @@ namespace WorldSkills.Pages
         {
 
         }
+
+        private void ReportButton_Click(object sender, RoutedEventArgs e)
+        {
+            Application = new Word.Application();
+            string file = $"{Directory.GetCurrentDirectory()}\\Docs\\Диплом.doc";
+            if (File.Exists(file))
+            {
+                Word.Document doc = Application.Documents.Open(file);
+                doc.Activate();
+                doc.Bookmarks["FIO"].Range.Text = FIOTextBox.Text;
+                doc.Bookmarks["SPEC"].Range.Text = SPECTextBox.Text;
+                Application.Visible = true;
+                doc.SaveAs($"{Directory.GetCurrentDirectory()}\\Docs\\{FIOTextBox.Text.Split()[0]}_dogovor.doc");
+
+            }
+             
+        }
+
+       
     }
 }
