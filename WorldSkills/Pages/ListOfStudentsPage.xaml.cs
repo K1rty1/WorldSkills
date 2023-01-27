@@ -13,6 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WorldSkills.Model.Core;
 using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
 
@@ -23,6 +24,7 @@ namespace WorldSkills.Pages
     /// </summary>
     public partial class ListOfStudentsPage : Page
     {
+        Core db = new Core();
         Word.Application Application;
         public ListOfStudentsPage()
         {
@@ -35,7 +37,9 @@ namespace WorldSkills.Pages
             aplication.Visible = true;
         }
 
-        private void ReportOutputWorld_Click(object sender, RoutedEventArgs e)
+        
+
+        private void VivodWordButtonClick(object sender, RoutedEventArgs e)
         {
             List<string> arrayStudent = new List<string>();
             Word.Application application = new Word.Application();
@@ -126,33 +130,31 @@ namespace WorldSkills.Pages
             document.SaveAs2($"{Directory.GetCurrentDirectory()}\\Docs\\Test.pdf", Word.WdExportFormat.wdExportFormatPDF);
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void ReportButtonClick(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void ReportOutputExcel_Click_1(object sender, RoutedEventArgs e)
+        private void VivodButtonClick(object sender, RoutedEventArgs e)
         {
 
         }
 
-        private void ReportButton_Click(object sender, RoutedEventArgs e)
-        {
-            Application = new Word.Application();
-            string file = $"{Directory.GetCurrentDirectory()}\\Docs\\Диплом.doc";
-            if (File.Exists(file))
-            {
-                Word.Document doc = Application.Documents.Open(file);
-                doc.Activate();
-                doc.Bookmarks["FIO"].Range.Text = FIOTextBox.Text;
-                doc.Bookmarks["SPEC"].Range.Text = SPECTextBox.Text;
-                Application.Visible = true;
-                doc.SaveAs($"{Directory.GetCurrentDirectory()}\\Docs\\{FIOTextBox.Text.Split()[0]}_dogovor.doc");
+        //private void ReportButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    Application = new Word.Application();
+        //    string file = $"{Directory.GetCurrentDirectory()}\\Docs\\Диплом.doc";
+        //    if (File.Exists(file))
+        //    {
+        //        Word.Document doc = Application.Documents.Open(file);
+        //        doc.Activate();
+        //        doc.Bookmarks["FIO"].Range.Text = FIOTextBox.Text;
+        //        doc.Bookmarks["SPEC"].Range.Text = SPECTextBox.Text;
+        //        Application.Visible = true;
+        //        doc.SaveAs($"{Directory.GetCurrentDirectory()}\\Docs\\{FIOTextBox.Text.Split()[0]}_dogovor.doc");
+        //    }
+        //}
 
-            }
-             
-        }
 
-       
     }
 }
