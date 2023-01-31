@@ -15,7 +15,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
-using WorldSkills.Model.Core;
+using WorldSkills.Model;
 using WorldSkills.Pages;
 
 namespace WorldSkills

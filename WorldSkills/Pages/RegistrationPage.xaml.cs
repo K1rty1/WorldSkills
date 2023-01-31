@@ -13,7 +13,6 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WorldSkills.Model;
-using WorldSkills.Model.Core;
 
 namespace WorldSkills.Pages
 {

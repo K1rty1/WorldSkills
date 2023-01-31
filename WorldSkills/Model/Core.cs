@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 
-namespace WorldSkills.Model.Core
+namespace WorldSkills.Model
 {
     public class Core
     {

@@ -13,7 +13,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WorldSkills.Model.Core;
+using WorldSkills.Model;
 using Excel = Microsoft.Office.Interop.Excel;
 using Word = Microsoft.Office.Interop.Word;
 
@@ -128,6 +128,8 @@ namespace WorldSkills.Pages
             //Сохранение
             document.SaveAs2($"{Directory.GetCurrentDirectory()}\\Docs\\Test.docx");
             document.SaveAs2($"{Directory.GetCurrentDirectory()}\\Docs\\Test.pdf", Word.WdExportFormat.wdExportFormatPDF);
+
+
         }
 
         private void ReportButtonClick(object sender, RoutedEventArgs e)

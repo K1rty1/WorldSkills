@@ -13,7 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WorldSkills.Model;
-using WorldSkills.Model.Core;
+using WorldSkills.ViewModel;
 
 namespace WorldSkills.Pages
 {
@@ -23,9 +23,11 @@ namespace WorldSkills.Pages
     public partial class AuthorizationPage : Page
     {
         Core db = new Core(); //Имя подключения
+        UsersViewModel obj = new UsersViewModel();
         public AuthorizationPage()
         {
             InitializeComponent();
+            
         }
 
         private void EntranceButton_Click(object sender, RoutedEventArgs e)
@@ -33,13 +35,9 @@ namespace WorldSkills.Pages
             try
 
             {
+                bool trueAuth = obj.Auth(TextBoxLogin.Text, TextBoxPassword.Text) ;
 
-                //считаем количество записей в таблице с заданными параметрами (логин, пароль)
-                Users имяПеременной = db.context.Users.Where(
-                x => x.Login == TextBoxLogin.Text && x.Password == TextBoxPassword.Text
-                ).FirstOrDefault();
-
-                if (имяПеременной == null)
+                if (trueAuth == false)
                 {
                     MessageBox.Show("Такой пользователь отсутствует!",
                     "Уведомление",
@@ -50,23 +48,27 @@ namespace WorldSkills.Pages
                 else
 
                 {
-
-                    switch (имяПеременной.IdRole)
+                    int role = obj.DefiningTheRole(TextBoxLogin.Text, TextBoxPassword.Text);
+                    if (role != 0)
                     {
+                        switch (role)
+                        {
+                            case 1:
+                                this.NavigationService.Navigate(new StudentPage());
 
-                        case 1:
-                            this.NavigationService.Navigate(new StudentPage());
+                                break;
+                            case 2:
+                                this.NavigationService.Navigate(new TeacherPage());
 
-                            break;
-                        case 2:
-                            this.NavigationService.Navigate(new TeacherPage());
+                                break;
 
-                            break;
-
+                        }
+                    }
                     }
 
 
-                }
+
+                
             }
             catch (Exception ex)
             {
